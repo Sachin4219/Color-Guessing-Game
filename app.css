@@ -1,0 +1,63 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+#container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 65vh;
+  width: 80vw;
+  margin: 2.5% auto 0 auto;
+  grid-gap: 5% 2.5%;
+  cursor: pointer;
+}
+.header {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  height: 30%;
+  background: rgb(73, 150, 175);
+}
+#header-2 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.el {
+  border-radius: 30px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 0.5%;
+}
+button {
+  width: 50%;
+  height: 10%;
+  cursor: pointer;
+}
+.flex-form {
+  width: 20%;
+  margin: 0px auto 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+h4 {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.winning-message {
+  position: absolute;
+  top: 40vh;
+  left: 0;
+  width: 100%;
+  color: white;
+  font-size: 4em;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}

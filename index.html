@@ -5,10 +5,138 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Color Game</title>
 	<link rel="stylesheet" href="./app.css">
-	<script type="text/javascript" src="./app.js"></script>
 </head>
+<script type="text/javascript" src="./app.js">	
+var c1,c2,c3,i;
+var colors=[];
+var div;
+var col=Math.floor(Math.random()*6);
+var container=document.getElementById('container');
+var winmessage = document.querySelector(".winning-message");
+
+function win(){
+
+			for(i=0;i<6;i++)
+			{
+				var element = document.querySelectorAll('#container div')[i];
+				element.style.visibility="visible";
+				element.style.background= colors[col];
+			}
+		winmessage.innerText="Congrats You guessed it right";
+	}
+
+	for(i=0;i<6;i++){
+			div = document.querySelectorAll('#container div')[i];
+			div.classList.add('el');
+			div.addEventListener("click",function(){
+			
+	if (this.style.background == colors[col])
+		{ 
+		win(); }
+	else{
+		this.style.visibility="hidden";
+		}
+	});
+		}
+	function start(){
+		winmessage.innerText="";
+		for(i=0;i<6;i++)
+		{
+			div = document.querySelectorAll('#container div')[i];
+			div.style.visibility="visible";
+		}
+		document.querySelector('#header-2 #color').innerText="";
+		colors=[];
+
+		for(i=0;i<6;i++)
+		{
+			var element = document.querySelectorAll('#container div')[i];
+			var lev=document.getElementById('level').value;
+
+			if(lev==="Hard"){
+
+				c1=(Math.floor(Math.random()*120) + Math.floor(Math.random()*80)).toString();
+				c2=(Math.floor(Math.random()*120) + Math.floor(Math.random()*80)).toString();
+				c3=(Math.floor(Math.random()*120) + Math.floor(Math.random()*80)).toString();
+
+			}
+				
+			else{
+			c1=Math.floor(Math.random()*256).toString();
+			c2=Math.floor(Math.random()*256).toString();
+			c3=Math.floor(Math.random()*256).toString(); }
+
+			colors.push("rgb("+c1+", "+c2+", "+c3+")");
+			element.style.background = "rgb("+c1+","+c2+","+c3+")";
+		}	
+        col=Math.floor(Math.random()*6);
+		document.querySelector("#header-2 #color").innerText=colors[col];
+}</script>
+
 <style type="text/css">
-	
+	body {
+  margin: 0px;
+  padding: 0px;
+}
+#container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 65vh;
+  width: 80vw;
+  margin: 2.5% auto 0 auto;
+  grid-gap: 5% 2.5%;
+  cursor: pointer;
+}
+.header {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  height: 30%;
+  background: rgb(73, 150, 175);
+}
+#header-2 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.el {
+  border-radius: 30px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 0.5%;
+}
+button {
+  width: 50%;
+  height: 10%;
+  cursor: pointer;
+}
+.flex-form {
+  width: 20%;
+  margin: 0px auto 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+h4 {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.winning-message {
+  position: absolute;
+  top: 40vh;
+  left: 0;
+  width: 100%;
+  color: white;
+  font-size: 4em;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
 </style>
 <body>
 

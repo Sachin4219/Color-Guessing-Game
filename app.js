@@ -46,7 +46,7 @@ function win(){
 		document.querySelector('#header-2 #color').innerText="";
 		colors=[];
 
-		for(i=0;i<elememts;i++)
+		for(i=0;i<elements;i++)
 		{
 			var element = document.querySelectorAll('#container div')[i];
 			

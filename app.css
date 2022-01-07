@@ -27,7 +27,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.el {
+#container div{
   border-radius: 30px;
 }
 
@@ -51,7 +51,7 @@ h4 {
   margin-top: 5px;
   margin-bottom: 10px;
 }
-.winning-message {
+.win-message {
   position: absolute;
   top: 40vh;
   left: 0;
